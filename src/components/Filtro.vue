@@ -4,15 +4,13 @@
 
 <template>
   <div>
-    <header>
-      <h1>Planificador de Gatos</h1>
-    </header>
-
+      <h2>Filtros</h2>
   </div>
 
 </template>
 
 <style scoped>
-
-
+ h2 {
+  color: blue
+}
 </style>
