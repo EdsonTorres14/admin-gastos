@@ -9,6 +9,34 @@ const emit = defineEmits(['ocultar-modal'])
         <div class="cerrar-modal">
             <img :src="cerrarModal" @click="$event => $emit('ocultar-modal')" />
         </div>
+
+        <div class="contenedor">
+            <form>
+                <legend>Añadir Gasto</legend>
+                <div class="campo">
+                    <label for="nombre">Nombre Gasto:</label>
+                    <input type="text" id="nombre" placeholder="Añade el nombre del gasto">
+                </div>
+                <div class="campo">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="text" id="cantidad" placeholder="Añade la cantidad del Gasto, ej. 300">
+                </div>
+                <div class="campo">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                        <option value="">-- Seleccione --</option>
+                        <option value="ahorro">Ahorro</option>
+                        <option value="comida">Comida</option>
+                        <option value="casa">Casa</option>
+                        <option value="gastos">Gastos</option>
+                        <option value="ocio">Ocio</option>
+                        <option value="salud">Salud</option>
+                        <option value="suscriptores">Suscriptores</option>
+                    </select>
+                </div>
+                <input type="submit" value="Ahadir Gasto">
+            </form>
+        </div>
     </div>
 </template>
 
