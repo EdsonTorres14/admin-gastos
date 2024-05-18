@@ -37,6 +37,9 @@ const ocultarModal = () => {
     modal.mostrar = false
   }, 300)
 }
+const guardarGasto = () => {
+  console.log('desde app')
+}
 </script>
 
 <template>
@@ -53,8 +56,8 @@ const ocultarModal = () => {
         <img :src="iconoNuevoGasto" alt="Icono nuevo gasto" @click="mostrarModal" />
       </div>
 
-      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" :modal="modal" v-model:nombre="gasto.nombre"
-        v-model:cantidad="gasto.cantidad" v-model:categoria="gasto.categoria" />
+      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto" :modal="modal"
+        v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad" v-model:categoria="gasto.categoria" />
     </main>
 
   </div>
