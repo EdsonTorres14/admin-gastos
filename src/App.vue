@@ -17,12 +17,16 @@ const definirPresupuesto = (cantidad) => {
   disponible.value = cantidad
 }
 const mostrarModal = () => {
-  modal.mostrar = true,
+  modal.mostrar = true
+  setTimeout(() => {
     modal.animar = true
+  }, 300);
 }
 const ocultarModal = () => {
-  modal.mostrar = false,
-    modal.animar = false
+  modal.animar = false
+  setTimeout(() => {
+    modal.mostrar = false
+  }, 300)
 }
 </script>
 
@@ -40,7 +44,7 @@ const ocultarModal = () => {
         <img :src="iconoNuevoGasto" alt="Icono nuevo gasto" @click="mostrarModal" />
       </div>
 
-      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" />
+      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" :modal="modal" />
     </main>
 
   </div>
