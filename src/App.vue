@@ -42,9 +42,20 @@ const ocultarModal = () => {
   }, 300)
 }
 const guardarGasto = () => {
-  gastos.value.pust({
+  gastos.value.push({
     ...gasto,
     id: generarId()
+  })
+
+  ocultarModal()
+
+  //Reiniciar el objeto
+  Object.assign(gasto, {
+    nombre: '',
+    cantidad: '',
+    categoria: '',
+    id: null,
+    fecha: Date.now()
   })
 }
 </script>

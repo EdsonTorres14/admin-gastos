@@ -83,7 +83,7 @@ const agregarGasto = () => {
                         <option value="suscriptores">Suscriptores</option>
                     </select>
                 </div>
-                <input type="submit" value="Ahadir Gasto">
+                <input type="submit" value="Añadir Gasto">
             </form>
         </div>
     </div>
