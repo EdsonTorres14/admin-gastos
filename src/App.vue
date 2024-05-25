@@ -21,6 +21,9 @@ const gasto = reactive({
   id: null,
   fecha: Date.now()
 })
+
+const gastos = ref([])
+
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad
   disponible.value = cantidad
@@ -38,7 +41,10 @@ const ocultarModal = () => {
   }, 300)
 }
 const guardarGasto = () => {
-  console.log('desde app')
+  gastos.value.pust({
+    ...gasto,
+    id: 123
+  })
 }
 </script>
 
