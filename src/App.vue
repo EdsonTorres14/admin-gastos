@@ -88,7 +88,7 @@ const guardarGasto = () => {
         <img :src="iconoNuevoGasto" alt="Icono nuevo gasto" @click="mostrarModal" />
       </div>
 
-      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto" :modal="modal"
+      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto" :modal="modal" :disponible="disponible"
         v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad" v-model:categoria="gasto.categoria" />
     </main>
 
