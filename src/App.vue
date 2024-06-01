@@ -61,7 +61,7 @@ const guardarGasto = () => {
 </script>
 
 <template>
-  <div>
+  <div :class="{ fijar: modal.mostra }">
     <header>
       <h1>Planificador de Gatos</h1>
       <div class="contededor-header contenedor sombra">
@@ -119,6 +119,11 @@ h1 {
 
 h2 {
   font-size: 3rem;
+}
+
+fijar {
+  overflow: hidden;
+  height: 100vh;
 }
 
 header {
