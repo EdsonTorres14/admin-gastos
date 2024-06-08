@@ -100,7 +100,7 @@ const seleccionarGasto = id => {
       <h1>Planificador de Gatos</h1>
       <div class="contededor-header contenedor sombra">
         <Presupuesto v-if="presupuesto === 0" @definir-presupuesto="definirPresupuesto" />
-        <ControlPresupuesto v-else :presupuesto="presupuesto" :disponible="disponible" :gastado="gastado" />
+        <ControlPresupuesto v-else :presupuesto="presupuesto" :disponible="disponible" :gastado="gastado"/>
       </div>
     </header>
     <main v-if="presupuesto > 0">
@@ -113,7 +113,7 @@ const seleccionarGasto = id => {
       </div>
 
       <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto" :modal="modal"
-        :disponible="disponible" v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad"
+        :disponible="disponible" :id="gasto.id" v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad"
         v-model:categoria="gasto.categoria" />
     </main>
 
