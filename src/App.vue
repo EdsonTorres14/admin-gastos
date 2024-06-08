@@ -92,6 +92,14 @@ const seleccionarGasto = id => {
   Object.assign(gasto, gastoEditar);
   mostrarModal()
 }
+
+const eliminarGasto = () => {
+  if (confirm('Eliminar?')) {
+    gastos.value = gastos.value.filter(gastoState => gastoState.id !== gasto.id)
+    ocultarModal()
+  }
+
+}
 </script>
 
 <template>
@@ -100,7 +108,7 @@ const seleccionarGasto = id => {
       <h1>Planificador de Gatos</h1>
       <div class="contededor-header contenedor sombra">
         <Presupuesto v-if="presupuesto === 0" @definir-presupuesto="definirPresupuesto" />
-        <ControlPresupuesto v-else :presupuesto="presupuesto" :disponible="disponible" :gastado="gastado"/>
+        <ControlPresupuesto v-else :presupuesto="presupuesto" :disponible="disponible" :gastado="gastado" />
       </div>
     </header>
     <main v-if="presupuesto > 0">
@@ -112,9 +120,9 @@ const seleccionarGasto = id => {
         <img :src="iconoNuevoGasto" alt="Icono nuevo gasto" @click="mostrarModal" />
       </div>
 
-      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto" :modal="modal"
-        :disponible="disponible" :id="gasto.id" v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad"
-        v-model:categoria="gasto.categoria" />
+      <Modal v-if="modal.mostrar" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto"
+        @eliminar-gasto="eliminarGasto" :modal="modal" :disponible="disponible" :id="gasto.id"
+        v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad" v-model:categoria="gasto.categoria" />
     </main>
 
   </div>
