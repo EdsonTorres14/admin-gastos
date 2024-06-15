@@ -1,5 +1,6 @@
 <script setup>
-import imagen from '../assets/img/grafico.jpg'
+import CircleProgress from "vue3-circle-progress";
+import "vue3-circle-progress/dist/circle-progress.css";
 import { formatearCantidad } from '../helpers'
 
 defineEmits(['reset-app'])
@@ -22,8 +23,10 @@ const props = defineProps({
 
 <template>
     <div class="dos-columnas">
-        <img :src="imagen">
-
+        <div class="contenedor-grafico">
+            <CircleProgress :percent="50" :size="250" :border-width="30" :border-bg-width="30" fill-color="#3b82f6"
+                empty-color="#E1E1E1" />
+        </div>
         <div class="contenedor-presupuesto">
             <button class="reset-app" type="button" @click="$event => $emit('reset-app')">Resetear App</button>
 
